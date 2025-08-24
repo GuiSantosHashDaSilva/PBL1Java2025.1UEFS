@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="695.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaPrincipalController">
+   <children>
+      <TabPane fx:id="mainTabPane" layoutX="-1.0" prefHeight="695.0" prefWidth="950.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tabLivros" text="Livros">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="571.0" prefWidth="800.0" style="-fx-background-color: lightgray;">
+                     <children>
+                        <ListView fx:id="listViewLivros" editable="true" layoutX="123.0" layoutY="111.0" prefHeight="445.0" prefWidth="680.0" />
+                        <Label layoutX="427.0" layoutY="76.0" text="Livros">
+                           <font>
+                              <Font name="Comic Sans MS" size="24.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane fx:id="anchorPaneLivro" layoutX="123.0" layoutY="111.0" prefHeight="445.0" prefWidth="680.0" style="-fx-background-color: lightgray;" visible="false">
+                           <children>
+                              <ListView fx:id="listViewReviewsLivro" layoutX="300.0" layoutY="234.0" prefHeight="200.0" prefWidth="368.0" />
+                              <VBox layoutX="48.0" layoutY="105.0" prefHeight="191.0" prefWidth="217.0" spacing="10.0">
+                                 <children>
+                                    <Label fx:id="detalheGeneroLivro" text="Label">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheAnoLivro" text="Label">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheAutor">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheEditora">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheIsbn">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheTemExemplar">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheNotaMediaLivro">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="detalheFoiVistoLivro" mnemonicParsing="false" onAction="#marcarVisto" text="Lido">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </CheckBox>
+                                 </children>
+                              </VBox>
+                              <Label layoutX="300.0" layoutY="213.0" text="Avaliações:">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="botaoVoltarLivro" layoutX="133.0" layoutY="355.0" mnemonicParsing="false" onAction="#esconderDetalhes" text="Voltar">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="detalheTituloLivro" alignment="CENTER" prefHeight="17.0" prefWidth="680.0" text="Label">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tabFilmes" text="Filmes">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgray;">
+                     <children>
+                        <ListView fx:id="listViewFilmes" editable="true" layoutX="123.0" layoutY="111.0" prefHeight="445.0" prefWidth="680.0" />
+                        <Label layoutX="427.0" layoutY="76.0" text="Filmes">
+                           <font>
+                              <Font name="Comic Sans MS" size="24.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane fx:id="detalhesPaneFilme" layoutX="123.0" layoutY="111.0" prefHeight="445.0" prefWidth="680.0" style="-fx-background-color: lightgray;" visible="false">
+                           <children>
+                              <VBox layoutX="48.0" layoutY="65.0" prefHeight="191.0" prefWidth="217.0" spacing="10.0">
+                                 <children>
+                                    <Label fx:id="detalheGeneroFilme" text="Label">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheAnoFilme" text="Label">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheTituloOriginalFilme" text="Label">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheDuracao" text="Label">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheDiretor" text="Label">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheRoteirista" text="Label">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheElencoFilme" text="Label">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheOndeVerFilme" text="Label">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheNotaMediaFilme" text="Label">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <CheckBox fx:id="detalheFoiVistoFilme" mnemonicParsing="false" onAction="#marcarVisto" text="Assistido">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </CheckBox>
+                                 </children>
+                              </VBox>
+                              <ListView fx:id="listViewReviewsFilme" layoutX="300.0" layoutY="234.0" prefHeight="200.0" prefWidth="368.0" />
+                              <Label layoutX="300.0" layoutY="213.0" text="Avaliações:">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="botaoVoltarFilme" layoutX="127.0" layoutY="381.0" mnemonicParsing="false" onAction="#esconderDetalhes" text="Voltar">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Label fx:id="detalheTituloFilme" alignment="CENTER" prefHeight="17.0" prefWidth="680.0" text="Label">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tabSeries" text="Séries">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: lightgray;">
+                     <children>
+                        <ListView fx:id="listViewSeries" editable="true" layoutX="123.0" layoutY="111.0" prefHeight="445.0" prefWidth="680.0" />
+                        <Label layoutX="427.0" layoutY="76.0" text="Séries">
+                           <font>
+                              <Font name="Comic Sans MS" size="24.0" />
+                           </font>
+                        </Label>
+                        <AnchorPane fx:id="detalhesPaneSerie" layoutX="123.0" layoutY="111.0" prefHeight="445.0" prefWidth="680.0" style="-fx-background-color: lightgray;" visible="false">
+                           <children>
+                              <VBox layoutX="48.0" layoutY="105.0" prefHeight="191.0" prefWidth="286.0" spacing="10.0">
+                                 <children>
+                                    <Label fx:id="detalheGeneroSerie" text="generoS">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheAnoSerie" text="anoS">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheAnoFinalSerie" text="anoFinalS">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheTituloOriginalSerie" text="TituloOriS">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheOndeVerSerie" text="ondeVerS">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheElencoSerie" text="elencoS">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="detalheNotaMediaSerie" text="notaMS">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <ListView fx:id="listViewTemporadas" layoutX="300.0" layoutY="234.0" prefHeight="200.0" prefWidth="347.0" />
+                              <Label layoutX="300.0" layoutY="213.0" text="Temporadas:">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button layoutX="127.0" layoutY="360.0" mnemonicParsing="false" onAction="#esconderDetalhes" text="Voltar">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="14.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="botaoIrParaAddTemporada" layoutX="356.0" layoutY="152.0" mnemonicParsing="false" onAction="#irParaAddTemporada" text="Adicionar Temporada">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="14.0" />
+                                 </font>
+                              </Button>
+                              <AnchorPane fx:id="detalhesPaneTemporada" prefHeight="445.0" prefWidth="680.0" style="-fx-background-color: lightgray;" visible="false">
+                                 <children>
+                                    <Label fx:id="detalheTituloTemporada" layoutX="47.0" layoutY="24.0" text="Label">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <VBox layoutX="47.0" layoutY="46.0" prefHeight="200.0" prefWidth="243.0" spacing="10.0">
+                                       <children>
+                                          <Label fx:id="detalheAnoTemporada" text="anoTemp">
+                                             <font>
+                                                <Font name="Comic Sans MS" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="detalheQtdEp" text="qtdEpTemp">
+                                             <font>
+                                                <Font name="Comic Sans MS" size="14.0" />
+                                             </font>
+                                          </Label>
+                                          <CheckBox fx:id="detalheFoiVistoTemporada" mnemonicParsing="false" onAction="#marcarTemporadaVista" text="Assistida">
+                                             <font>
+                                                <Font name="Comic Sans MS" size="14.0" />
+                                             </font>
+                                          </CheckBox>
+                                          <Button mnemonicParsing="false" onAction="#esconderDetalhesTemporada" text="Voltar">
+                                             <font>
+                                                <Font name="Comic Sans MS" size="14.0" />
+                                             </font>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                    <ListView fx:id="listViewReviewsTemporada" layoutX="347.0" layoutY="223.0" prefHeight="200.0" prefWidth="326.0" />
+                                    <Label layoutX="347.0" layoutY="202.0" text="Reviews:">
+                                       <font>
+                                          <Font name="Comic Sans MS" size="14.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <Label fx:id="detalheTituloSerie" alignment="CENTER" prefHeight="28.0" prefWidth="680.0" text="Label">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="20.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Pane fx:id="paneReview" layoutX="475.0" layoutY="200.0" prefHeight="154.0" prefWidth="326.0" visible="false">
+         <children>
+            <Label text="Adicionar Avaliação">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="caixaComentario" layoutY="33.0" prefHeight="25.0" prefWidth="321.0" promptText="Comentário">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </TextField>
+            <Label layoutX="7.0" layoutY="80.0" text="Nota:">
+               <font>
+                  <Font name="Comic Sans MS" size="14.0" />
+               </font>
+            </Label>
+            <Slider fx:id="sliderNota" blockIncrement="1.0" layoutX="7.0" layoutY="107.0" majorTickUnit="1.0" max="5.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+            <Button fx:id="botaoAddReview" layoutX="163.0" layoutY="113.0" mnemonicParsing="false" onAction="#addReview" text="Adicionar Avaliação">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Button>
+            <Label fx:id="erroMarcarVista" layoutX="156.0" layoutY="92.0" text="A mídia precisa ser vista" visible="false">
+               <font>
+                  <Font name="Comic Sans MS" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutX="555.0" layoutY="30.0" prefHeight="72.0" prefWidth="394.0">
+         <children>
+            <TextField fx:id="caixaBusca" layoutX="82.0" layoutY="17.0" prefHeight="25.0" prefWidth="303.0" promptText="titulo, gênero, autor, elenco, etc" />
+            <Label layoutX="9.0" layoutY="21.0" text="Buscar Midia" />
+            <Button fx:id="botaoBusca" layoutX="334.0" layoutY="17.0" mnemonicParsing="false" onAction="#buscarMidia" text="Buscar" />
+            <Label fx:id="labelErroBusca" layoutX="168.0" layoutY="42.0" text="Entrada Inválida!" visible="false" />
+            <Label fx:id="labelNaoTemMidia" layoutX="154.0" layoutY="42.0" visible="false" />
+         </children>
+      </Pane>
+      <Pane layoutY="30.0" prefHeight="84.0" prefWidth="445.0">
+         <children>
+            <TextField fx:id="caixaFiltroGenero" layoutX="95.0" layoutY="17.0" prefHeight="25.0" prefWidth="141.0" promptText="Gênero" />
+            <TextField fx:id="caixaFiltroAno" layoutX="252.0" layoutY="18.0" prefHeight="25.0" prefWidth="48.0" promptText="Ano" />
+            <Button fx:id="botaoFiltro" layoutX="14.0" layoutY="18.0" mnemonicParsing="false" onAction="#enviarFiltroOrdem" text="Filtrar Por" />
+            <CheckBox fx:id="checkOrdem" layoutX="338.0" layoutY="22.0" mnemonicParsing="false" text="Ordenar Melhores" />
+            <Label fx:id="labelErroFiltro" layoutX="139.0" layoutY="43.0" text="Ocorreu um erro ao filtrar" visible="false" />
+         </children>
+      </Pane>
+      <Button fx:id="botaoMudarCena" layoutX="20.0" layoutY="300.0" mnemonicParsing="false" onAction="#mudarTelaParaAdd" text="Adicionar" />
+   </children>
+</Pane>

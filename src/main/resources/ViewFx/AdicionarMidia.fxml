@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="695.0" prefWidth="950.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AdicionarMidiaController">
+   <children>
+      <TabPane fx:id="tabPaneAddMidia" prefHeight="695.0" prefWidth="950.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tabAddLivro" text="Adicionar Livro">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="caixaAutor" layoutX="100.0" layoutY="190.0" promptText="Autor" />
+                        <TextField fx:id="caixaEditor" layoutX="100.0" layoutY="230.0" promptText="Editora" />
+                        <TextField fx:id="caixaIsbn" layoutX="100.0" layoutY="270.0" promptText="ISBN" />
+                        <CheckBox fx:id="checkExemplar" layoutX="100.0" layoutY="316.0" mnemonicParsing="false" text="Possui Exemplar ?" />
+                        <Label layoutX="368.0" layoutY="14.0" text="Adicionando Livro">
+                           <font>
+                              <Font name="Comic Sans MS" size="26.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tabAddFilme" text="Adicionar Filme">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="caixaElencoFilme" layoutX="100.0" layoutY="190.0" prefHeight="25.0" prefWidth="222.0" promptText="Elenco (nome1 sobre1, nome2 sobre2)" />
+                        <TextField fx:id="caixaTituloOriginalFilme" layoutX="100.0" layoutY="230.0" promptText="Título Original" />
+                        <TextField fx:id="caixaOndeViuFilme" layoutX="100.0" layoutY="270.0" promptText="Onde Assistiu" />
+                        <TextField fx:id="caixaDuracaoFilme" layoutX="100.0" layoutY="310.0" promptText="Duração" />
+                        <TextField fx:id="caixaDirecaoFilme" layoutX="100.0" layoutY="350.0" promptText="Diretor" />
+                        <TextField fx:id="caixaRoteiristaFilme" layoutX="100.0" layoutY="390.0" promptText="Roteirista" />
+                        <Label layoutX="368.0" layoutY="14.0" text="Adicionando Filme">
+                           <font>
+                              <Font name="Comic Sans MS" size="26.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="tabAddSerie" text="Adicionar Serie">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="caixaElencoSerie" layoutX="100.0" layoutY="190.0" prefHeight="25.0" prefWidth="222.0" promptText="Elenco (nome1 sobre1, nome2 sobre2)" />
+                        <TextField fx:id="caixaTituloOriginalSerie" layoutX="100.0" layoutY="230.0" promptText="Título Original" />
+                        <TextField fx:id="caixaOndeViuSerie" layoutX="100.0" layoutY="270.0" promptText="Onde Assistiu" />
+                        <DatePicker fx:id="dateAnoFinal" layoutX="100.0" layoutY="310.0" promptText="Ano Final" />
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                        <Label layoutX="368.0" layoutY="14.0" text="Adicionando Série">
+                           <font>
+                              <Font name="Comic Sans MS" size="26.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <TextField fx:id="caixaTituloMidia" layoutX="100.0" layoutY="100.0" promptText="Título" />
+      <TextField fx:id="caixaGeneroMidia" layoutX="100.0" layoutY="140.0" promptText="Gênero" />
+      <DatePicker fx:id="datePickerAnoMidia" layoutX="100.0" layoutY="180.0" promptText="Ano de Lançamento" />
+      <Button fx:id="botaoAdicionarMidia" layoutX="123.0" layoutY="460.0" mnemonicParsing="false" onAction="#adicionarMidia" text="Adicionar Mídia" />
+      <AnchorPane fx:id="paneAddTemporada" prefHeight="695.0" prefWidth="950.0" style="-fx-background-color: lightgray;" visible="false">
+         <children>
+            <VBox layoutX="138.0" layoutY="130.0" prefHeight="367.0" prefWidth="639.0" spacing="20.0" style="-fx-background-color: lightgray;">
+               <children>
+                  <TextField fx:id="caixaTituloTemporada" promptText="Título da Temporada">
+                     <font>
+                        <Font name="Comic Sans MS" size="14.0" />
+                     </font>
+                  </TextField>
+                  <DatePicker fx:id="dateAnoTemporada" prefHeight="25.0" prefWidth="226.0" promptText="Ano de Lançamento da Temporada" />
+                  <TextField fx:id="caixaQtdEpTemporada" promptText="Quantidade de Episódios">
+                     <font>
+                        <Font name="Comic Sans MS" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="botaoAdicionarTemporada" mnemonicParsing="false" onAction="#adicionarTemporada" text="Adicionar Temporada">
+                     <font>
+                        <Font name="Comic Sans MS" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <Label fx:id="labelSerieAlvoTemporada" layoutX="421.0" layoutY="44.0" text="serie">
+               <font>
+                  <Font name="Comic Sans MS" size="26.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="botaoVoltarCena" layoutX="20.0" layoutY="50.0" mnemonicParsing="false" onAction="#mudarTelaParaPrincipal" text="Voltar" />
+      <Label fx:id="labelErroCampoVazio" layoutX="231.0" layoutY="464.0" text="Todos os Campos São Obrigatórios" visible="false" />
+   </children>
+</AnchorPane>
